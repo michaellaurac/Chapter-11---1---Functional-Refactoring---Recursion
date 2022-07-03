@@ -18,14 +18,14 @@ test("verifies that 3! is equal to 6 with a standard recursive factorial functio
   assert.end();
 });
 test("verifies that 10! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
-  assert.strictEqual(memoizedFactorial(10), 3628800);
+  assert.strictEqual(memoizedFactorial(10).result, 3628800);
   assert.end();
 });
 test("verifies that 10! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
-  assert.strictEqual(memoizedFactorial(10), 3628800);
+  assert.strictEqual(memoizedFactorial(10).result, 3628800);
   assert.end();
 });
-test("verifies that 11! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
-  assert.strictEqual(memoizedFactorial(11), 39916800);
+test("verifies that 11! is equal to 39916800 with a memoized recursive factorial function", (assert) => {
+  assert.strictEqual(memoizedFactorial(11).result, 39916800);
   assert.end();
 });

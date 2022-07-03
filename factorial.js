@@ -6,8 +6,7 @@ function standardFactorial (number) {
   }
 };
 
-const lookupTable = {};
-function memoizedFactorial (number) {
+function memoizedFactorial (number, lookupTable = {}) {
   if (number in lookupTable) {
     console.log("cached");
     return lookupTable[number];
@@ -17,10 +16,10 @@ function memoizedFactorial (number) {
     if (number < 2) {
       reduceValue = 1;
     } else {
-      reduceValue = number * memoizedFactorial(number - 1);
+      reduceValue = number * (memoizedFactorial(number - 1, lookupTable)).result;
     }
     lookupTable[number] = reduceValue;
-    return reduceValue;
+    return { result: reduceValue, lookupTable };
   }
 }
 
