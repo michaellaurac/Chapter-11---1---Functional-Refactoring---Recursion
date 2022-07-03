@@ -4,7 +4,7 @@ const fileName = () => {
 };
 
 const test = require("tape");
-const { factorial } = require("./factorial.js");
+const { standardFactorial, memoizedFactorial } = require("./factorial.js");
 
 // setup test
 test("verifies the test file name", (assert) => {
@@ -13,7 +13,15 @@ test("verifies the test file name", (assert) => {
 });
 
 // functional tests
-test("verifies that 3! is equal to 6", (assert) => {
-  assert.strictEqual(factorial(3), 6);
+test("verifies that 3! is equal to 6 with a standard recursive factorial function", (assert) => {
+  assert.strictEqual(standardFactorial(3), 6);
+  assert.end();
+});
+test("verifies that 10! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
+  assert.strictEqual(memoizedFactorial(10), 3628800);
+  assert.end();
+});
+test("verifies that 10! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
+  assert.strictEqual(memoizedFactorial(10), 3628800);
   assert.end();
 });
