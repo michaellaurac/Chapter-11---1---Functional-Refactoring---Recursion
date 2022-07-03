@@ -25,3 +25,7 @@ test("verifies that 10! is equal to 3628800 with a memoized recursive factorial 
   assert.strictEqual(memoizedFactorial(10), 3628800);
   assert.end();
 });
+test("verifies that 11! is equal to 3628800 with a memoized recursive factorial function", (assert) => {
+  assert.strictEqual(memoizedFactorial(11), 39916800);
+  assert.end();
+});
