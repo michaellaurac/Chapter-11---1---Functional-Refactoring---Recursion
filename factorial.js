@@ -13,7 +13,12 @@ function memoizedFactorial (number) {
     return lookupTable[number];
   } else {
     console.log("calculating");
-    const reduceValue = standardFactorial(number);
+    let reduceValue;
+    if (number < 2) {
+      reduceValue = 1;
+    } else {
+      reduceValue = number * memoizedFactorial(number - 1);
+    }
     lookupTable[number] = reduceValue;
     return reduceValue;
   }
